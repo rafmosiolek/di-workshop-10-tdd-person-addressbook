@@ -4,6 +4,7 @@ class Person {
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.emails = [];
+        this.phoneNumbers = [];
     }
 
     fullName() {
@@ -12,6 +13,24 @@ class Person {
 
     addEmail(email) {
         this.emails.push(email);
+    }
+
+    addPhoneNumber(phoneNumber) {
+        this.phoneNumbers.push(phoneNumber);
+    }
+
+    returnFormattedDetails() {
+        return [
+            this.fullName(),
+            '----------',
+            'DOB: ' + this.dateOfBirth, 
+            '',
+            'Email Addresses:',
+            this.emails.join(', '),
+            '',
+            'Phone Numbers:',
+            this.phoneNumbers.join(', ')
+        ].join('\n');
     }
 }
 
